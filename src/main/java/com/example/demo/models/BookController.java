@@ -22,7 +22,7 @@ public class BookController {
 
     @RequestMapping(value="{reader}",method=RequestMethod.GET)
     public String readerBooks(@PathVariable("reader") String reader,Model model) {
-        List<BookEntity> readingList = bookRepository.findByreader(reader);
+        List<BookEntity> readingList = bookRepository.findByReader(reader);
         if(readingList !=null) {
             model.addAttribute("readingListBooks",readingList);
         }
